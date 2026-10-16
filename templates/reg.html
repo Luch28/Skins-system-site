@@ -1,0 +1,12 @@
+{{define "reg"}}
+{{template "head" .}}
+<h2>Регистрация</h2>
+<p>{{.Msg}}</p>
+{{if .OK}}
+<p><a href="/">Go to home</a></p>
+{{else}}
+<p><a href="/">Back</a></p>
+{{end}}
+</body>
+</html>
+{{end}}

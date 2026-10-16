@@ -1,0 +1,25 @@
+{{define "skin_index"}}
+{{template "head" .}}
+<h2>Скины и плащи</h2>
+{{if .Flash}}<p style="color:red">{{.Flash}}</p>{{end}}
+{{if .User}}
+<p>Hi, {{.User.Username}}! <a href="/SkinSystem/?logout=1">logout</a></p>
+<form method="post" enctype="multipart/form-data">
+	<input type="hidden" name="upload_skin" value="1" />
+	<p>Skin:<br /><input type="file" name="skin_file" /><br /><input type="submit" value="Upload skin" /></p>
+</form>
+<form method="post" enctype="multipart/form-data">
+	<input type="hidden" name="upload_cloak" value="1" />
+	<p>Cape:<br /><input type="file" name="cloak_file" /><br /><input type="submit" value="Upload cape" /></p>
+</form>
+{{else}}
+<form method="post">
+	<input type="hidden" name="login" value="1" />
+	<p>User:<br /><input type="text" name="username" /><br /></p>
+	<p>Password:<br /><input type="password" name="password" /><br /></p>
+	<p><input type="submit" value="Login" /></p>
+</form>
+{{end}}
+</body>
+</html>
+{{end}}
